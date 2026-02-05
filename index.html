@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <title>Slovenská légia</title>
+    <style>
+        body { background-color: #8B0000; color: white; font-family: serif; text-align: center; padding-top: 100px; }
+        .lock-screen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #8B0000; z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        input { padding: 10px; font-size: 1.2rem; border: none; border-radius: 5px; }
+        button { padding: 10px 20px; margin-top: 10px; background: #D4AF37; border: none; cursor: pointer; font-weight: bold; }
+        #obsah { display: none; } /* Toto skryje tvoj web pred nepovolanými */
+        .pillar { border: 1px solid #D4AF37; margin: 10px; padding: 20px; display: inline-block; width: 250px; background: white; color: black; }
+    </style>
+</head>
+<body>
+
+    <div id="lock" class="lock-screen">
+        <h1>Vstup len pre členov Slovenskej légie</h1>
+        <p>Zadajte heslo pre zobrazenie konceptu:</p>
+        <input type="password" id="pass">
+        <button onclick="skontroluj()">Vstúpiť</button>
+    </div>
+
+    <div id="obsah">
+        <h1>Slovenská légia</h1>
+        <p><i>"Za krajšie Slovensko a rytierske srdce v každom z nás"</i></p>
+        <hr style="width: 50%; border-color: #D4AF37;">
+        
+        <div class="pillar"><h3>Múdrosť</h3><p>Hľadáme pravdu v záplave klamstiev.</p></div>
+        <div class="pillar"><h3>Láskavosť</h3><p>Sila bez srdca je tyrania.</p></div>
+        <div class="pillar"><h3>Odvaha</h3><p>Stáť si za pravdou, aj keď je to nepohodlné.</p></div>
+        <div class="pillar"><h3>Vytrvalosť</h3><p>Budovanie vlasti je beh na dlhú trať.</p></div>
+        <div class="pillar"><h3>Čestnosť</h3><p>Naše slovo je náš zákon.</p></div>
+    </div>
+
+    <script>
+        function skontroluj() {
+            const zadane = document.getElementById("pass").value;
+            const tajneHeslo = "Nitra_2026"; // <--- SEM NAPÍŠ SVOJE HESLO
+
+            if (zadane === tajneHeslo) {
+                document.getElementById("lock").style.display = "none";
+                document.getElementById("obsah").style.display = "block";
+            } else {
+                alert("Nesprávne heslo!");
+            }
+        }
+    </script>
+</body>
+</html>
