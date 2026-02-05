@@ -1,1 +1,1 @@
-# slovenskask.github.io
+# slovenskalegiask.github.io
